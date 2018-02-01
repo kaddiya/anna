@@ -82,6 +82,7 @@ visibility: hidden;
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100% - 4rem);
+  border-bottom:1px solid #aaa;
 }
 
 .message-inner {
@@ -202,6 +203,7 @@ visibility: hidden;
   padding-left: 0.125rem;
   margin-bottom: -0.125rem;
   font-family: Helvetica Neue for IBM, Helvetica Neue, Helvetica, Arial, sans-serif;
+  z-index: 20;
 
 }
 
@@ -236,6 +238,7 @@ input:-moz-placeholder {
   border-bottom: 0.0625rem solid #aeaeae;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  position: relative;
 }
 
 #textInputDummy {
@@ -258,6 +261,7 @@ input:-moz-placeholder {
   width: 45%;
   max-width: 32.0625rem;
   min-width: 29.6875rem;
+  display: none;
 }
 
 #payload-column.full {
@@ -429,4 +433,90 @@ html{
   url('../fonts/ibm-glyphs.svg?1b8643#ibm-glyph') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+
+
+
+/*  UI change code   */
+.from-user .message-inner {
+    position: relative;
+    font-size: 1rem;
+    color: #000;
+    letter-spacing: 0.015rem;
+    line-height: 1.3125rem;
+    background: #e5e5e5;
+    border-radius: 2rem;
+    border-top-right-radius: 0;
+    text-align: left;
+    display: inline-block;
+    margin-left: 2.5rem;
+    min-width: 2.5rem;
+}
+.from-user .message-inner p {
+    padding: 0.4rem 0.9375rem;
+}
+.from-user {
+  position: relative;
+  padding-right: 30px;
+}
+.from-user .message-inner::after,.from-user .message-inner::before {
+   display: none;
+}
+
+.from-watson.latest.top p:before {
+  display: none;
+}
+
+.from-watson .message-inner {
+    position: relative;
+    border-radius: 2rem;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.015rem;
+    line-height: 1.3125rem;
+    background: #d91a2c;
+    border-top-left-radius: 0;
+}
+
+.from-watson.latest .message-inner {
+  color: #fff;
+}
+
+.form-user {
+  margin: 15px 0;
+  position: relative;
+  padding-right: 25px;
+}
+
+.from-user.top::after {
+    position: absolute;
+    right: 0;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../img/user-20.png);
+    top: 5px;
+}
+
+.from-watson {
+  position: relative;
+  padding-left: 25px;
+}
+.from-watson::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: url(../img/anna-20.png);;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+label.inputOutline::after {
+    content: '>';
+    position: absolute;
+    right: 0;
+    top: 7px;
+    z-index: 10;
 }
