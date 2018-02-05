@@ -492,9 +492,9 @@ html{
     position: absolute;
     right: 0;
     content: '';
-    width: 20px;
-    height: 20px;
-    background: url(../img/user-20.png);
+    width: 23px;
+    height: 23px;
+    background: url(../img/anna-20.png);
     top: 5px;
 }
 
@@ -504,9 +504,9 @@ html{
 }
 .from-watson::before {
     content: '';
-    width: 20px;
-    height: 20px;
-    background: url(../img/anna-20.png);;
+    width: 23px;
+    height: 23px;
+    background: url(../img/user-20.png);;
     display: inline-block;
     position: absolute;
     left: 0;
@@ -529,7 +529,7 @@ label.inputOutline::after {
   margin: 20px 0;
 }
 
-scrollingChat {
+#scrollingChat {
   border-bottom: 1px solid #292929;
 }
 
