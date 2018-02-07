@@ -163,6 +163,10 @@ var ConversationPanel = (function() {
 
     textArray.forEach(function(currentText) {
       if (currentText) {
+        var imgSrc = ''
+        if(currentText.lastIndexOf('https://') > 0) {
+          imgSrc = currentText.substring(currentText.lastIndexOf('https://'), currentText.length)
+        }
         var messageJson = {
           // <div class='segments'>
           'tagName': 'div',
@@ -178,7 +182,19 @@ var ConversationPanel = (function() {
               'children': [{
                 // <p>{messageText}</p>
                 'tagName': 'p',
-                'text': currentText
+                'text': currentText,
+              },
+              {
+                // <img class="brand-img" src="?"/>
+                'tagName': 'img',
+                'classNames': [imgSrc ? 'brand-img' : 'hide'],
+                'attributes': [{
+                  name: 'src',
+                  value: imgSrc
+                },{
+                  name: 'alt',
+                  value: 'Unable to load image'
+                }]
               }]
             }]
           }]
